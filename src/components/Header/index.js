@@ -7,9 +7,7 @@ const Navbar = () => {
         <h1>NAVBAR</h1>
         <Hamburger />
         <Menu>
-          <MenuLink to="/" activeStyle>
-            Home
-          </MenuLink>
+          <MenuLink to="/">Home</MenuLink>
         </Menu>
       </PrimaryNav>
     </>

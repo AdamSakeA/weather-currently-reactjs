@@ -8,6 +8,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import WorldForecast from "./WorldForecast";
 import { Wrapper, Title, Paragraph } from "./home.styles";
+import Layout from "../../components/Layout";
 
 export default function Home() {
   const {
@@ -41,7 +42,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <Layout title="ini home">
       <Wrapper>
         <Title>Provide you a world wide weather forecast currently</Title>
         <Paragraph>
@@ -58,6 +59,6 @@ export default function Home() {
         error={cityError}
       />
       <WorldForecast />
-    </>
+    </Layout>
   );
 }

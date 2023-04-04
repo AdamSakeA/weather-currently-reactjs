@@ -6,7 +6,9 @@ export const PrimaryNav = styled.nav`
   display: flex;
   background: none;
   justify-content: space-between;
-  padding: 1.5rem 0;
+  padding: 1.5rem 100px;
+  align-items: center;
+  background-color: none;
 `;
 
 export const MenuLink = styled(Link)`

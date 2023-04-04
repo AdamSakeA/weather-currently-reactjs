@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { deleteCountryCityList } from "../../utils/redux/actions/cityAction";
+import Layout from "../../components/Layout";
+import Header from "../../components/Header";
 
 export default function WeatherList() {
   const { getDataListCityResult: indonesiaResult } = useSelector(
@@ -13,14 +15,17 @@ export default function WeatherList() {
   }, [dispatch]);
 
   return (
-    <div>
-      {indonesiaResult.map((item, i) => {
-        return (
-          <>
-            <h1>{item.name}</h1>
-          </>
-        );
-      })}
-    </div>
+    <>
+      <Header />
+      <Layout title="ini test juga">
+        {indonesiaResult.map((item, i) => {
+          return (
+            <>
+              <h1>{item.name}</h1>
+            </>
+          );
+        })}
+      </Layout>
+    </>
   );
 }

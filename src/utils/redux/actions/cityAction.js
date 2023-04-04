@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const weatherURL = (cityName, countryCode) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=b2d245f9b06511c71dbd72708bbfbb4e`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`;
   return url;
 };
 

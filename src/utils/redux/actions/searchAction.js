@@ -2,13 +2,13 @@ import axios from "axios";
 
 // dataURL with geocode search limit 5
 const weatherURL = (cityName) => {
-  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=b2d245f9b06511c71dbd72708bbfbb4e`;
+  const url = `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${process.env.REACT_APP_API_KEY}`;
   return url;
 };
 
 // dataURL with detail
 const detailWeatherURL = (lat, lon) => {
-  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=b2d245f9b06511c71dbd72708bbfbb4e`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${process.env.REACT_APP_API_KEY}`;
   return url;
 };
 

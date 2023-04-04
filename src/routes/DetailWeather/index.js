@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import Header from "../components/Header";
+import Header from "../../components/Header";
+import Layout from "../../components/Layout";
 
 export default function DetailWeather() {
   const {
@@ -12,9 +13,9 @@ export default function DetailWeather() {
   return (
     <>
       <Header />
-      <div>
+      <Layout title="ini test">
         <h2>{cityDetailResult.name}</h2>
-      </div>
+      </Layout>
     </>
   );
 }
