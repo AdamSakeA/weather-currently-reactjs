@@ -8,6 +8,8 @@ const Navbar = () => {
         <Hamburger />
         <Menu>
           <MenuLink to="/">Home</MenuLink>
+          <MenuLink to="/country">Country List</MenuLink>
+          <MenuLink to="/search">Search</MenuLink>
         </Menu>
       </PrimaryNav>
     </>

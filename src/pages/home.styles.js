@@ -7,6 +7,13 @@ export const Wrapper = styled.div`
   margin-bottom: 100px;
 `;
 
+export const ButtonContainer = styled.div`
+  display: flex;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+`;
+
 export const Paragraph = styled.p`
   font-weight: 300;
   text-align: right;
