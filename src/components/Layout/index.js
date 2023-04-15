@@ -5,9 +5,9 @@ export default function Layout({ children, title }) {
   document.title = title || "Default";
 
   return (
-    <>
+    <div>
       <Navbar />
       <Container>{children}</Container>
-    </>
+    </div>
   );
 }
