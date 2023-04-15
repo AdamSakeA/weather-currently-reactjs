@@ -1,5 +1,5 @@
 import useGetCityDetail from "./useGetCityDetail";
 import useGetCityList from "./useGetCityList";
-import useGetCountryCityList from "./useGetList";
+import useGetCountryCityList from "./useGetCountryCityList";
 
 export { useGetCityDetail, useGetCityList, useGetCountryCityList };
