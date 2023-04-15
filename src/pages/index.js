@@ -1,9 +1,6 @@
-import { useState } from "react";
 import { Wrapper, Title, Paragraph, ButtonContainer } from "./home.styles";
 import { Button, Layout } from "../components";
 import { useNavigate } from "react-router-dom";
-import { getCityListApi } from "../utils/services/api";
-import { useEffect } from "react";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -14,10 +11,6 @@ export default function Home() {
   const navigateToCountryListPage = () => {
     navigate(`/country`);
   };
-
-  // useEffect(() => {
-  //   getCityListApi();
-  // }, []);
 
   return (
     <Layout title="ini home">

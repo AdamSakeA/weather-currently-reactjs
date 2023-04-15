@@ -1,5 +1,9 @@
 import React from "react";
 
 export default function NotFound() {
-  return <div>error pages</div>;
+  return (
+    <div>
+      <h1>Your endpoint is undefined</h1>
+    </div>
+  );
 }
