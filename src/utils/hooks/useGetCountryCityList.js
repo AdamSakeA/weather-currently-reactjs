@@ -1,10 +1,9 @@
-import React from "react";
 import { useQuery } from "react-query";
-import { getCityListApi } from "../services/api";
+import { getCountryCityListApi } from "../services/api";
 
-export default function useGetList(queryKey) {
+export default function useGetCountryCityList(queryKey) {
   const { data, isLoading, isError } = useQuery(queryKey, () =>
-    getCityListApi()
+    getCountryCityListApi()
   );
   return { countryList: data, isLoading, isError };
 }

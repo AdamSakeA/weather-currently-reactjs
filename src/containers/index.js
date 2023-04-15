@@ -1,5 +1,5 @@
 import ListSearch from "./list-search";
 import ListCountry from "./list-country";
-import ListCity from "./list-city";
+import DetailWeather from "./detail-weather";
 
-export { ListSearch, ListCountry, ListCity };
+export { ListSearch, ListCountry, DetailWeather };
