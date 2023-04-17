@@ -4,7 +4,7 @@ const Navbar = () => {
   return (
     <>
       <PrimaryNav>
-        <h1>NAVBAR</h1>
+        <h1>WEATHER APPS</h1>
         <Hamburger />
         <Menu>
           <MenuLink to="/">Home</MenuLink>

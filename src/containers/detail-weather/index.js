@@ -4,7 +4,9 @@ import React from "react";
 import { useGetCityDetail } from "../../utils/hooks";
 
 // component
-import { TimeZone, IconLoader } from "../../components";
+import { TimeZone, CardWeather, CardTemperature } from "../../components";
+
+import { Container } from "./detail-weather.styles";
 
 export default function DetailWeather({ cityName, countryCode }) {
   const { cityDetail, isLoading, isError } = useGetCityDetail(
@@ -13,39 +15,32 @@ export default function DetailWeather({ cityName, countryCode }) {
     countryCode
   );
 
-  const icon = cityDetail?.weather?.map((item) => {
-    return item.icon;
-  });
-
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Something Wrong...</p>;
 
-  const HandleError = () => {
-    if (!cityDetail.name) {
-      return (
-        <div>
-          <h1>I'm sorry {cityDetail}</h1>
-        </div>
-      );
-    }
-  };
+  const { weather, main } = cityDetail;
 
-  const NotError = () => {
-    if (cityDetail.name) {
-      return (
-        <div>
-          <h1>{cityDetail?.name || cityDetail}</h1>
-          <TimeZone />
-          <IconLoader iconId={icon} />
-        </div>
-      );
-    }
+  const HandleError = () => {
+    return (
+      <div>
+        <h1>I'm sorry {cityDetail}</h1>
+      </div>
+    );
   };
 
   return (
-    <>
-      <HandleError />
-      <NotError />
-    </>
+    <Container>
+      <div>
+        {!cityDetail.name && <HandleError />}
+        <h1>{cityDetail?.name || cityDetail}</h1>
+        <TimeZone />
+      </div>
+      <div>
+        <CardWeather payload={weather} />
+      </div>
+      <div>
+        <CardTemperature payload={main} />
+      </div>
+    </Container>
   );
 }
