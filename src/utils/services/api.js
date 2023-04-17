@@ -27,7 +27,8 @@ export const getCityListBySearch = async (cityName) => {
 export const getCityDetail = async (cityName, countryCode) => {
   try {
     const response = await Api.get(
-      `data/2.5/weather?q=${cityName},${countryCode}&appid=${process.env.REACT_APP_API_KEY}`
+      `data/2.5/weather?q=${cityName},${countryCode}&appid=64fc811a94e9e0ccfd065a5e901b8dbf
+      `
     );
     return response.data;
   } catch (error) {
