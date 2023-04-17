@@ -16,7 +16,7 @@ export default function DetailWeather({ cityName, countryCode }) {
   );
 
   if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Something Wrong...</p>;
+  if (isError) return <p>Something Wrong..</p>;
 
   const { weather, main } = cityDetail;
 
