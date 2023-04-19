@@ -1,11 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-bottom: 50px;
-  margin-top: 100px;
+  margin-bottom: 100px;
   .title {
     font-size: ${(props) => props.theme.font.size.medium};
     background: linear-gradient(90deg, #df6b00 -0.13%, #9c0000 97.71%);
@@ -19,12 +15,4 @@ export const Wrapper = styled.div`
     font-size: ${(props) => props.theme.font.size.xsmall};
     color: ${(props) => props.theme.colors.text};
   }
-`;
-
-export const ButtonContainer = styled.div`
-  display: flex;
-  gap: 100px;
-  align-items: center;
-  justify-content: center;
-  margin-top: 80px;
 `;

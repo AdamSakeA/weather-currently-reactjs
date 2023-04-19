@@ -1,14 +1,14 @@
 import styled, { css } from "styled-components";
 
 export const ButtonContainer = styled.button`
-  padding: 10px 20px;
+  padding: 10px 25px;
   cursor: pointer;
   border: none;
   border-radius: 50px;
   font-weight: 500;
   outline: none;
   transition: all 0.5s;
-  font-size: ${(props) => props.fontSize || "15px"};
+  font-size: ${(props) => props.theme.font.size.xsmall || props.fontSize};
   ${(props) => props.color && COLOR[props.color]}
   ${(props) => props.disabled && DISABLED}
 `;
@@ -24,20 +24,24 @@ const DISABLED = css`
 const COLOR = {
   primary: css`
     color: #fff;
-    background: linear-gradient(#3f3cfe, #e943d5);
+    background-color: ${(props) => props.theme.colors.primary};
+    &:hover {
+      color: #fff;
+      background-color: ${(props) => props.theme.colors.primary};
+      box-shadow: 1px 1px 10px rgba(163, 61, 28, 1);
+      border: 1px solid rgba(214, 90, 49, 1);
+    }
+    /* background: linear-gradient(#3f3cfe, #e943d5); */
   `,
   secondary: css`
-    color: #000;
-    background: linear-gradient(#c7c7d2, #bcbaba);
-  `,
-  third: css`
     color: #fff;
     background: none;
     border: 1px solid white;
     &:hover {
       color: #fff;
-      background: linear-gradient(#3f3cfe, #e943d5);
-      border: none;
+      background-color: ${(props) => props.theme.colors.primary};
+      box-shadow: 1px 1px 10px rgba(163, 61, 28, 1);
+      border: 1px solid rgba(214, 90, 49, 1);
     }
   `,
 };

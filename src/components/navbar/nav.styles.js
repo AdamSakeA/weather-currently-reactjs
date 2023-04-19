@@ -17,8 +17,11 @@ export const MenuLink = styled(Link)`
   align-items: center;
   text-decoration: none;
   height: 100%;
+  transition: 500ms;
+  &:hover,
   &.active {
-    color: blue;
+    border-bottom: 1px solid ${(props) => props.theme.colors.third};
+    color: ${(props) => props.theme.colors.secondary};
   }
 `;
 

@@ -1,6 +1,9 @@
-import { Wrapper, Title, Paragraph, ButtonContainer } from "./home.styles";
-import { Button, Layout } from "../components";
 import { useNavigate } from "react-router-dom";
+
+// styles
+import { Wrapper, ButtonContainer } from "./home.styles";
+// components
+import { Button, Layout } from "../components";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -15,22 +18,17 @@ export default function Home() {
   return (
     <Layout title="ini home">
       <Wrapper>
-        <Title>Provide you a world wide weather forecast currently</Title>
-        <Paragraph>
-          The world forecaster weather,
-          <br /> it's easy to use, to know, to have in your current location to
-          know.
-        </Paragraph>
+        <h1 className="title">
+          Provide you a world wide weather forecast currently
+        </h1>
+        <p className="paragraph">
+          The world forecaster weather, it's easy to use, to know, to have in
+          your current location to know.
+        </p>
       </Wrapper>
       <ButtonContainer>
-        <Button onClick={() => navigateToSearchPage()} fontSize="20px">
-          Search
-        </Button>
-        <Button
-          onClick={() => navigateToCountryListPage()}
-          color="third"
-          fontSize="20px"
-        >
+        <Button onClick={() => navigateToSearchPage()}>Search</Button>
+        <Button onClick={() => navigateToCountryListPage()} color="secondary">
           Country List
         </Button>
       </ButtonContainer>
