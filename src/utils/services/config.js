@@ -1,5 +1,5 @@
 const configURL = {
-  apiURL: "http://api.openweathermap.org/",
+  apiURL: "https://api.openweathermap.org/",
   listCountryURL: "https://countriesnow.space/api/v0.1/countries",
 };
 
