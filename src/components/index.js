@@ -1,5 +1,6 @@
 import Navbar from "./navbar";
-import Search from "./search";
+import SearchCity from "./search-city";
+import SearchCountry from "./search-country";
 import Button from "./button";
 import CardCountry from "./card-country";
 import CardCity from "./card-city";
@@ -12,7 +13,8 @@ import Layout from "./layout";
 export {
   Navbar,
   Layout,
-  Search,
+  SearchCity,
+  SearchCountry,
   Button,
   CardCountry,
   CardCity,

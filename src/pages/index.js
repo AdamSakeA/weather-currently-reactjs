@@ -16,7 +16,7 @@ export default function Home() {
   };
 
   return (
-    <Layout title="ini home">
+    <Layout title="Weather Currently">
       <Wrapper>
         <h1 className="title">
           Provide you a world wide weather forecast currently

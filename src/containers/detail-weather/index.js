@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 // hooks
 import { useGetCityDetail } from "../../utils/hooks";
@@ -6,6 +7,7 @@ import { useGetCityDetail } from "../../utils/hooks";
 // component
 import { TimeZone, CardWeather, CardTemperature } from "../../components";
 
+// styles
 import { Container } from "./detail-weather.styles";
 
 export default function DetailWeather({ cityName, countryCode }) {
@@ -14,32 +16,33 @@ export default function DetailWeather({ cityName, countryCode }) {
     cityName,
     countryCode
   );
+  const navigate = useNavigate();
+
+  // error handler (boolean)
+  const cityNotFound = cityDetail === "city not found";
 
   if (isLoading) return <p>Loading...</p>;
   if (isError) return <p>Something Wrong..</p>;
-
-  const { weather, main } = cityDetail;
-
-  const HandleError = () => {
+  if (cityNotFound)
     return (
       <div>
-        <h1>I'm sorry {cityDetail}</h1>
+        <button onClick={() => navigate(-1)}>go back</button>
+        <h1>{`We are sorry ${cityDetail}`}</h1>
       </div>
     );
-  };
 
   return (
     <Container>
+      <button onClick={() => navigate(-1)}>go back</button>
       <div>
-        {!cityDetail.name && <HandleError />}
-        <h1>{cityDetail?.name || cityDetail}</h1>
+        <h1>{cityDetail?.name}</h1>
         <TimeZone />
       </div>
       <div>
-        <CardWeather payload={weather} />
+        <CardWeather payload={cityDetail?.weather} />
       </div>
       <div>
-        <CardTemperature payload={main} />
+        <CardTemperature payload={cityDetail?.main} />
       </div>
     </Container>
   );

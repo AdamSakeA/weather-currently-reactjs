@@ -7,10 +7,8 @@ export default function DetailWeatherPage() {
   const { cityName, countryCode } = useParams();
 
   return (
-    <>
-      <Layout title="ini test">
-        <DetailWeather cityName={cityName} countryCode={countryCode} />
-      </Layout>
-    </>
+    <Layout title={`Weather ${cityName}`}>
+      <DetailWeather cityName={cityName} countryCode={countryCode} />
+    </Layout>
   );
 }

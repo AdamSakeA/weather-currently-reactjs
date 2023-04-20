@@ -4,7 +4,7 @@ import { ListSearch } from "../../containers";
 
 export default function SearchPage() {
   return (
-    <Layout title="ini search page">
+    <Layout title="Search: City">
       <ListSearch />
     </Layout>
   );

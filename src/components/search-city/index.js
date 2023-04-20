@@ -3,11 +3,11 @@ import {
   Dropdown,
   ListItem,
   SearchForm,
-} from "./search.styles";
+} from "./search-city.styles";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useNavigate } from "react-router-dom";
 
-export default function Search(props) {
+export default function SearchCity(props) {
   const { setCityName, cityName, result, isLoading, isError } = props;
 
   // search on input and show dropdown content
@@ -31,6 +31,7 @@ export default function Search(props) {
       <SearchDropdown isLoading={isLoading} isError={isError} />
     );
   }
+
   return (
     <SearchContainer>
       <SearchForm>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // components
-import { Search } from "../../components";
+import { SearchCity } from "../../components";
 
 // hooks
 import { useGetCityList } from "../../utils/hooks";
@@ -15,7 +15,7 @@ export default function ListSearch() {
   return (
     <Container>
       <Title>Search your city to check current weather</Title>
-      <Search
+      <SearchCity
         cityName={cityName}
         setCityName={setCityName}
         result={cityList}
