@@ -5,7 +5,7 @@ import { Layout, SearchCountry } from "../../components";
 import { Wrapper } from "./country.styles";
 
 // containers
-import { ListCountry } from "../../containers";
+import { ListCountry, LoadingListCountry } from "../../containers";
 
 // hooks
 import { useGetCountryCityList } from "../../utils/hooks";
@@ -18,15 +18,14 @@ export default function NationPage() {
   );
 
   const CountryContents = () => {
+    if (isLoading) return <LoadingListCountry />;
+    if (isError) return <p>Something Wrong...</p>;
     if (countryName.length > 0) {
       return <ListCountry payload={countryFiltered} />;
     } else {
       return <ListCountry payload={countryList?.data} />;
     }
   };
-
-  if (isLoading) return <p>Loading...</p>;
-  if (isError) return <p>Something wrong...</p>;
 
   return (
     <Layout title="Country List">

@@ -2,25 +2,30 @@ import { useNavigate } from "react-router-dom";
 
 import { CityContainer, CityList, City } from "./card-city.styles";
 
-function CardCity({ cityName }) {
+function CardCity({ cities }) {
   const navigate = useNavigate();
-  const countryName = cityName?.country;
 
-  const navigateToWeatherDetailPage = (cityName, countryCode) => {
+  const navigateToWeatherDetailPage = (cityName) => {
+    const countryCode = cities.countryCode;
     const weatherDetailParams = `/weather/${cityName}/${countryCode}`;
     navigate(weatherDetailParams);
   };
 
+  if (!cities.countryName) {
+    return (
+      <CityContainer>
+        <h2>Please choose country</h2>
+      </CityContainer>
+    );
+  }
+
   return (
     <CityContainer>
-      <h2>Cities of {countryName}</h2>
+      <h2>Cities of {cities.countryName}</h2>
       <CityList>
-        {cityName?.cities?.map((item, i) => {
+        {cities?.cities?.map((item, i) => {
           return (
-            <City
-              key={i}
-              onClick={() => navigateToWeatherDetailPage(item, cityName?.iso2)}
-            >
+            <City key={i} onClick={() => navigateToWeatherDetailPage(item)}>
               <p>{item}</p>
             </City>
           );

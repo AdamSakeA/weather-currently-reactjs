@@ -17,7 +17,13 @@ import NationPage from "./pages/country";
 import NotFound from "./pages/_notfound";
 import SearchPage from "./pages/search";
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
 const router = createBrowserRouter([
   {

@@ -12,34 +12,20 @@ import {
 } from "./list-country.styles";
 
 export default function ListCountry({ payload }) {
-  const [id, setId] = useState(0);
-
-  const citiesFilter = payload[id];
-
-  const showCities = (idx) => {
-    setId(idx);
-  };
+  const [citiesFilter, setCitiesFilter] = useState({
+    countryCode: "",
+    countryName: "",
+    cities: [],
+  });
 
   return (
     <Container>
       <Contents>
         <CountrySideBar>
-          {payload?.map((item, idx) => {
-            return (
-              <div className={`country ${id === idx && "active"}`} key={idx}>
-                <CardCountry
-                  idx={idx}
-                  id={id}
-                  showCities={showCities}
-                  countryName={item.country}
-                  countryCode={item.iso2}
-                />
-              </div>
-            );
-          })}
+          <CardCountry payload={payload} setCitiesFilter={setCitiesFilter} />
         </CountrySideBar>
         <CitiesSideBar>
-          <CardCity cityName={citiesFilter} />
+          <CardCity cities={citiesFilter} />
         </CitiesSideBar>
       </Contents>
     </Container>

@@ -42,7 +42,7 @@ export const CountrySideBar = styled.div`
   ::-webkit-scrollbar-thumb:hover {
     background: grey;
   }
-  .country {
+  /* .country {
     margin-bottom: 30px;
     padding: 20px 30px;
     border-radius: 20px;
@@ -53,7 +53,7 @@ export const CountrySideBar = styled.div`
   }
   .active {
     background-color: ${(props) => props.theme.colors.primary};
-  }
+  } */
 `;
 
 export const CitiesSideBar = styled.div`
